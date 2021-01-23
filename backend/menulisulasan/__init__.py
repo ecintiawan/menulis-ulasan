@@ -8,10 +8,10 @@ from flask_jwt_extended import JWTManager
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
-app.config.from_object("config.Config")
+app.config.from_object("config.DevConfig")
 
 api = Api(app)
 jwt = JWTManager(app)
-
 db = SQLAlchemy(app)
+
 Migrate(app, db)
