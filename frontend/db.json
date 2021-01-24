@@ -1,0 +1,37 @@
+{
+    "users": [{
+            "id": 1,
+            "first_name": "Christopher",
+            "last_name": "Reeve",
+            "email": "test@test.com",
+            "username": "zynth17",
+            "password": "$2y$12$kAvK9gp21U1rm3Wzza2gE.x2/Vo/ur3PFF9PRx5Jp0Fw1ixfj10qO",
+            "created_at": "2021-01-24T13:55:07.678706",
+            "modified_at": "2021-01-24T13:55:07.678706",
+            "verified_at": null,
+            "is_verified": false,
+            "is_deleted": false
+        },
+        {
+            "id": 2,
+            "first_name": "Bambang",
+            "last_name": "Suprapto",
+            "email": "bambang@test.com",
+            "username": "bambangonly",
+            "password": "$2y$12$kAvK9gp21U1rm3Wzza2gE.x2/Vo/ur3PFF9PRx5Jp0Fw1ixfj10qO",
+            "created_at": "2021-01-24T13:55:07.678706",
+            "modified_at": "2021-01-24T13:55:07.678706",
+            "verified_at": null,
+            "is_verified": false,
+            "is_deleted": false
+        }
+    ],
+    "reviews" : [
+        {
+            "id" : 1,
+            "title" : "Menulis review 1",
+            "thumbnail_url" : "https://via.placeholder.com/150",
+            "review_text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac turpis sollicitudin mauris tincidunt pretium sit amet id nibh. Duis vel diam laoreet, dignissim augue at, blandit purus. Donec consequat metus a bibendum volutpat. Mauris at interdum ex. Maecenas sagittis magna vestibulum laoreet volutpat. Ut maximus blandit turpis, interdum lacinia velit mollis sed. Donec hendrerit convallis augue vitae aliquet. Proin id orci eleifend, feugiat lectus sit amet, viverra lacus. Aliquam maximus et arcu vitae elementum. Vivamus nec eros et nunc aliquam rhoncus vel auctor massa. Donec eget pulvinar massa. Nulla convallis scelerisque lorem, sed egestas lorem imperdiet id. Vivamus velit ante, pretium ac fringilla et, fringilla ac lorem. Pellentesque sed sagittis augue. Nam ornare viverra nunc ac fringilla. Quisque sed pellentesque mauris. Suspendisse ut ligula vulputate, laoreet neque at, mollis est."
+        }
+    ]
+}
