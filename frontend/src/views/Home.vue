@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello menulis ulasan!</h1>
+    <h1>Hello menulis ulasan!</h1>
 </template>
 
 <script>
