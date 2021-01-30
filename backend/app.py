@@ -1,6 +1,15 @@
 from flask import jsonify
 from menulisulasan import app, db, api, jwt, logger
-from menulisulasan.resources.user import User, UserRegistration, UserLogin, UserLogout, UserChangePassword, TokenRefresh
+from menulisulasan.resources.user import(
+    User,
+    UserRegistration,
+    UserLogin,
+    UserLogout,
+    UserChangePassword,
+    TokenRefresh,
+    VerifyEmail,
+    ResendEmail
+)
 from werkzeug.exceptions import HTTPException
 from blacklist import BLACKLIST
 
@@ -29,7 +38,7 @@ def handle_exception(e):
     logger.error(e)
     if isinstance(e, HTTPException):
         return e
-    return {"message": "Oops, Something's wrong."}, 500
+    return {"message": "Oops, ada yang salah."}, 500
 
 
 @jwt.user_claims_loader
@@ -85,11 +94,13 @@ def revoked_token_callback():
 
 
 api.add_resource(User, "/user")
-api.add_resource(UserRegistration, "/register")
-api.add_resource(UserLogin, "/login")
-api.add_resource(UserLogout, "/logout")
+api.add_resource(UserRegistration, "/user/register")
+api.add_resource(UserLogin, "/user/login")
+api.add_resource(UserLogout, "/user/logout")
 api.add_resource(UserChangePassword, "/user/change-password")
-api.add_resource(TokenRefresh, "/refresh")
+api.add_resource(TokenRefresh, "/user/refresh-token")
+api.add_resource(VerifyEmail, "/user/verify-email")
+api.add_resource(ResendEmail, "/user/resend-email")
 
 if __name__ == "__main__":
     app.run(port=5000)

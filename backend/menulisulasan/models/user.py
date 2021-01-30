@@ -14,6 +14,8 @@ class UserModel(db.Model):
     password = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime(), default=datetime.now())
     modified_at = db.Column(db.DateTime(), onupdate=datetime.now())
+    verified_at = db.Column(db.DateTime())
+    is_verified = db.Column(db.Boolean(), default=False, nullable=False)
     is_delete = db.Column(db.Boolean(), default=False, nullable=False)
 
     def __init__(self, first_name, last_name, email, username, password):
@@ -62,6 +64,13 @@ class UserModel(db.Model):
     def update_password_to_db(self, password):
         logger.info("START UPDATE TO DB")
         self.password = generate_password_hash(password)
+        db.session.commit()
+        logger.info("END UPDATE TO DB")
+
+    def update_verification_to_db(self):
+        logger.info("START UPDATE TO DB")
+        self.is_verified = True
+        self.verified_at = datetime.now()
         db.session.commit()
         logger.info("END UPDATE TO DB")
 
