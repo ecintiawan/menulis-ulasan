@@ -1,30 +1,27 @@
 <template>
-    <div id="nav">
-        <router-link to="/">Home</router-link>
-    </div>
-
-    <router-view />
-
-    <!-- set progressbar -->
-    <vue-progress-bar></vue-progress-bar>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
 
-<script>
-import api from '@api/api-axios.js';
-export default {
-    mounted() {
-        this.$Progress.finish();
-    },
-    created() {
-        this.$Progress.start();
-        api.interceptors.request.use(config => {
-            this.$Progress.start(); // for every request start the progress
-            return config;
-        });
-        api.interceptors.response.use(response => {
-            this.$Progress.finish(); // finish when a response is received
-            return response;
-        });
-    }
-};
+<script lang="ts">
+import { defineComponent } from 'vue'
+import HelloWorld from './components/HelloWorld.vue'
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    HelloWorld
+  }
+})
 </script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
