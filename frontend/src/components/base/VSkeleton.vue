@@ -1,5 +1,5 @@
 <template>
-	<div>Hello World</div>
+	<div class="skeleton"></div>
 </template>
 
 <script lang="ts">
@@ -12,4 +12,11 @@
 	});
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+	.skeleton {
+		@apply bg-gray-400;
+	}
+	.skeleton::after {
+		@apply block w-1/2 h-full;
+	}
+</style>
